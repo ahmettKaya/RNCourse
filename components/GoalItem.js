@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View, Image } from 'react-native';
 
 export default function GoalItem(props) {
 	return (
@@ -7,6 +7,7 @@ export default function GoalItem(props) {
 			style={({pressed}) => pressed && styles.pressed}
 		>
 			<View style={styles.listItemContainer}>
+				<Image source={require('../assets/goalWhite.png')} style={styles.imageStyle}/>
 				<Text style={styles.listItemText}>{props.goalText}</Text>
 			</View>
 		</Pressable>
@@ -18,8 +19,9 @@ const styles = StyleSheet.create({
 		backgroundColor: 'black',
 		height: 50,
 		borderRadius: 20,
-		justifyContent: 'center',
-		marginBottom: '2%'
+		marginBottom: '2%',
+		flexDirection: 'row',
+		alignItems: 'center'
 	},
 	listItemText: {
 		color: 'white',
@@ -28,5 +30,10 @@ const styles = StyleSheet.create({
 	},
 	pressed: {
 		opacity: 0.5
+	},
+	imageStyle: {
+		width: 21,
+		height: 20,
+		marginLeft: 15
 	}
 });

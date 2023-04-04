@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, Keyboard, Modal } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Keyboard, Modal, Image } from 'react-native';
 
 export default function GoalInput(props) {
 	const [goalText, setGoalText] = useState('')
@@ -11,6 +11,7 @@ export default function GoalInput(props) {
 			animationType="slide"
 		>
 			<View style={[styles.goalContainer, styles.shadowEffect]}>
+				<Image source={require('../assets/goal.png')} style={styles.imageStyle}/>
 				<TextInput
 					style={styles.goalInput}
 					placeholder='Enter your goal...'
@@ -49,7 +50,7 @@ export default function GoalInput(props) {
 
 const styles = StyleSheet.create({
 	goalContainer: {
-		marginTop: '100%',
+		marginTop: '80%',
 		marginHorizontal: '5%',
 		padding: '5%',
 		backgroundColor: 'gray',
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
 		alignItems: 'stretch',
 		borderWidth: 2,
 		borderRadius: 5,
-		borderColor: 'black',
+		borderColor: 'gray',
 		backgroundColor: 'white',
 		padding: 5,
 		fontSize: 24,
@@ -89,5 +90,10 @@ const styles = StyleSheet.create({
 		},
 		shadowOpacity: 0.5,
 		shadowRadius: 10
+	},
+	imageStyle: {
+		width: 110,
+		height: 100,
+		alignSelf: 'center'
 	}
 });
